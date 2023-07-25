@@ -63,12 +63,12 @@ int write_number(int is_negative, int ind, char buffer[],
 	int flags, int width, int precision, int size)
 {
 	int length = BUFF_SIZE - ind - 1;
-	char pad = ' ', extra_ch = 0;
+	char padd = ' ', extra_ch = 0;
 
 	UNUSED(size);
 
 	if ((flags & F_ZERO) && !(flags & F_MINUS))
-		pad = '0';
+		padd = '0';
 	if (is_negative)
 		extra_ch = '-';
 	else if (flags & F_PLUS)
